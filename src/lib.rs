@@ -141,6 +141,9 @@ impl Overlay {
     fn build_watchers(&self) -> Result<Receiver<EventType>, Error> {
         let (tx, rx): (Sender<EventType>, Receiver<EventType>) = mpsc::channel();
 
+        // NOTE: There should be a watcher on Output.
+        // NOTE: That moves files not created by Overlay to highest priority Input.
+
         for index in 0..self.inputs.len() {
             self.inputs[index].build_watcher(tx.clone())?;
         }
