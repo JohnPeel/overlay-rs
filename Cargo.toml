@@ -1,0 +1,9 @@
+[package]
+name = "overlay"
+version = "0.1.0"
+authors = ["John Peel <john@dgby.org>"]
+edition = "2018"
+
+[dependencies]
+failure = "0.1.5"
+notify = "4.0.12"
